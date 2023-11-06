@@ -59,7 +59,6 @@
             });
 
             let result = await response.json();
-            console.log("after deleting user:", result);
             if (result.errors) {
                 deleteErrorToast.showToast();
             } else {

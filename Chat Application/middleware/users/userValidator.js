@@ -56,14 +56,11 @@ const addUserValidator = [
 // above middleware gives a result that we can receive into another function
 
 const addUserValidatorHandler = function (req, res, next) {
-  console.log("array of validation per korche");
   const errors = validationResult(req);
   const mappedErrors = errors.mapped();
   if (Object.keys(mappedErrors).length === 0) {
-    console.log("kono error hoini clinet side a tai controller a jabe");
     next();
   } else {
-    console.log("error hoice client side tai unlink korbe");
     // remove uploaded files
     if (req.files.length > 0) {
       const { filename } = req.files[0];

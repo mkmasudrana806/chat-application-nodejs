@@ -12,13 +12,15 @@ const {
   addUserValidator,
   addUserValidatorHandler,
 } = require("../middleware/users/userValidator");
+const { checkLogin } = require("../middleware/common/checkLogin");
 
 // LOGIN PAGE
-router.get("/", dynamicAppTitle("Users"), getUser);
+router.get("/", dynamicAppTitle("Users"), checkLogin, getUser);
 
 //  ADD A USER
 router.post(
   "/",
+  checkLogin,
   avatarUpload,
   addUserValidator,
   addUserValidatorHandler,

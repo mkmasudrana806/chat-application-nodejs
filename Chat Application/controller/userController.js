@@ -6,6 +6,7 @@ const { unlink } = require("fs");
 
 // GET USER PAGE AND LOAD ALL THE USERS
 const getUser = async (req, res, next) => {
+  console.log("api hit to get user");
   try {
     const users = await User.find();
     res.render("users", {
