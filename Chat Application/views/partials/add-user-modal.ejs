@@ -33,7 +33,10 @@
     </div>
   </div>
 </div>
+
+<!-- here is the javascript inline code  -->
 <script>
+  // select the modal and form
   const modal = document.querySelector("#add-user-modal");
   const form = document.querySelector("#add-user-form");
 
@@ -46,6 +49,7 @@
   function closeModal() {
     modal.style.display = "none";
   }
+
   function openModal() {
     modal.style.display = "block";
   }
@@ -78,6 +82,7 @@
 
     // get response
     let result = await response.json();
+    console.log("response from server", result);
 
     // handle error and response
     if (result.errors) {
